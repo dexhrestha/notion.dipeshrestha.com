@@ -1,9 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import { NotionAPI } from 'notion-client';
-import dotenv from 'dotenv';
-
-dotenv.config()
 
 const app = express();
 const notion = new NotionAPI({
@@ -40,3 +37,4 @@ const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
