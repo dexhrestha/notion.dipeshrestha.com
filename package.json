@@ -1,24 +1,31 @@
 {
-  "name": "test",
+  "name": "notion-vercel-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.mjs",
   "scripts": {
-    "start": "node --env-file=.env app.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "prod": "node public/final.js",
+    "start": "node --experimental-modules --env-file=.env  src/index.mjs",
+    "startdev": "nodemon --exec 'node --experimental-modules  --env-file=.env src/index.mjs'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint ./",
+    "eslint-fix": "eslint ./ --fix"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "find-up": "^7.0.0",
     "notion-client": "^6.16.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.24.5",
-    "@babel/core": "^7.24.5",
-    "@babel/preset-env": "^7.24.5"
+    "@eslint/js": "^9.2.0",
+    "eslint": "^9.2.0",
+    "globals": "^15.2.0",
+    "nodemon": "^3.1.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   }
 }

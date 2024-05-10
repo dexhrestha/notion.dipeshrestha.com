@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=require("express")();e.get("/tes",((e,s)=>s.send("Express on Vercel"))),e.listen(3e3,(()=>console.log("Server ready on port 3000."))),module.exports=e})();
