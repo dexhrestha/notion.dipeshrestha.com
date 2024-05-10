@@ -11,11 +11,6 @@ const notion = new NotionAPI({
 // Enable CORS for all routes
 app.use(cors());
 
-
-app.get('/',(req,res)=>{
-  res.status(200).send("Home")
-});
-
 app.get('/page/:pageId', async (req, res) => {
   try {
     const { pageId } = req.params;
@@ -23,7 +18,7 @@ app.get('/page/:pageId', async (req, res) => {
     res.json(recordMap);
   } catch (error) {
     console.error('Error fetching data from Notion:', error);
-    res.status(500).json({ error: 'Internal Server error' });
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
