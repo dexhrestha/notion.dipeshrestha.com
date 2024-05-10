@@ -8,9 +8,7 @@ const notion = new NotionAPI({
   authToken:process.env.NOTION_TOKEN_V2,
 });
 
-// Enable CORS for all routes
 app.use(cors());
-
 
 app.get('/',(req,res)=>{
   res.status(200).send("Home")
